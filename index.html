@@ -1,13 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <title>Lab 01</title>
-    <meta charset="UTF-8" />
-
-    <script src="src/index.js"></script>
+    <meta charset="UTF-8">
 </head>
-
 <body>
+<style>
+    body {
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+    }
 
+    main {
+        padding: 20px 30px;
+        border-radius: 12px;
+        max-width: 500px;
+        width: 100%;
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    label {
+        display: flex;
+        flex-direction: column;
+    }
+
+    input {
+        padding: 8px;
+        border-radius: 6px;
+        margin-top: 5px;
+    }
+
+    button {
+        padding: 10px;
+        border-radius: 6px;
+    }
+    button:hover{
+        background: darkgray;
+    }
+
+    #result {
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 1rem;
+    }
+</style>
+
+<main>
+    <h1>Численное интегрирование (правая сумма Римана)</h1>
+    <form id="integralForm">
+        <label>
+            Начало интервала (a):
+            <input type="number" id="a" step="any" required>
+        </label>
+        <label>
+            Конец интервала (b):
+            <input type="number" id="b" step="any" required>
+        </label>
+        <label>
+            Количество подинтервалов (n):
+            <input type="number" id="n" step="1" value="1000" min="1" required>
+        </label>
+        <button type="submit">Вычислить</button>
+    </form>
+    <section id="result">
+        Здесь будет вывод
+    </section>
+</main>
+
+<script src="src/index.js"></script>
 </body>
 </html>
